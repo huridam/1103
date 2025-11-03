@@ -1,0 +1,126 @@
+:root {
+  --bg: #0b0f15;
+  --card: #111827;
+  --muted: #9ca3af;
+  --fg: #e5e7eb;
+  --accent: #2563eb;
+  --danger: #dc2626;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.header {
+  padding: 8px 4px;
+}
+
+.chat-card {
+  background: var(--card);
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  flex: 1;
+}
+
+.chat-log {
+  padding: 12px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.bubble {
+  max-width: 85%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin: 8px 0;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+.bubble.user {
+  background: #0ea5e9;
+  color: #021728;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+.bubble.assistant {
+  background: #1f2937;
+  color: var(--fg);
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}
+
+.controls {
+  border-top: 1px solid #1f2937;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 140px 120px;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 720px) {
+  .row { grid-template-columns: 1fr; }
+}
+
+input[type="text"], select, textarea {
+  width: 100%;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  color: var(--fg);
+  padding: 10px 12px;
+}
+textarea { resize: vertical; min-height: 60px; }
+
+.btn {
+  background: var(--accent);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+.btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+.btn.secondary {
+  background: #374151;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.toast {
+  background: #fde68a;
+  color: #1f2937;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+
